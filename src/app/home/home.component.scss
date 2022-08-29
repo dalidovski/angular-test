@@ -1,0 +1,131 @@
+@media (max-width: 600px) {
+  .grid {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search input {
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .search input,
+  .search button {
+    width: 100%;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  padding: 5rem 0;
+
+  h1 {
+    color: blueviolet;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 0;
+
+    a {
+      color: blueviolet;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h1,
+  .description {
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .search input {
+    margin-right: 0.5em;
+    padding: 5px 10px;
+  }
+
+  .search button,
+  .btn {
+    background-color: blueviolet;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+    color: white;
+    cursor: pointer;
+    padding: 5px 15px;
+
+    &:hover {
+      filter: brightness(1.4);
+    }
+  }
+
+  .grid {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    margin-top: 3rem;
+    max-width: 800px;
+    padding-left: 0;
+
+    .card {
+      border-radius: 10px;
+      border: 1px solid #eaeaea;
+      flex-basis: 45%;
+      margin: 1rem;
+      padding: 1.5rem;
+      transition: color 0.15s ease, border-color 0.15s ease;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: blueviolet;
+        border-color: blueviolet;
+      }
+
+      h3 {
+        margin: 1rem 0 0.3rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+footer {
+  align-items: center;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100%;
+
+  a {
+    align-items: center;
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+  }
+}

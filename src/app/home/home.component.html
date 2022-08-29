@@ -1,0 +1,41 @@
+<div class="container">
+  <main>
+    <h1>The Rick and Morty</h1>
+    <p class="description">Welcome to Rick and Morty world</p>
+
+    <form class="search" (submit)="searchCharacter()">
+      <input
+        [(ngModel)]="nameOfCharacter"
+        name="nameOfCharacter"
+        type="search"
+      />
+      <button>Search</button>
+    </form>
+
+    <ul class="grid">
+      <li class="card" *ngFor="let character of results">
+        <a
+          [routerLink]="'/character/' + character.id"
+          title="{{ character.name }} details"
+        >
+          <img src="{{ character.image }}" alt="{{ character.name }}" />
+          <h3>{{ character.name }}</h3>
+        </a>
+      </li>
+    </ul>
+
+    <p>
+      <button class="btn" *ngIf="info && info.next" (click)="loadMore()">Load More</button>
+    </p>
+  </main>
+
+  <footer>
+    <a
+      href="https://sites.google.com/devoteam.com/ct-studio-front/home"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Powered by Devoteam Pole Front
+    </a>
+  </footer>
+</div>

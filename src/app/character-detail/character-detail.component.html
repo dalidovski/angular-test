@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="card">
+    <img class="photo" [src]="character.image" />
+    <div class="infos">
+      <div class="info"><b>Name: </b><label>{{character.name}}</label></div>
+      <div class="info"><b>Species: </b><label>{{character.species}}</label></div>
+      <div class="info"><b>Type: </b><label>{{character.type}}</label></div>
+      <div class="info"><b>Gender: </b><label>{{character.gender}}</label></div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" (click)="goBack()">Back to chracters list</a>
+</div>
