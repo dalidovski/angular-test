@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   public results: Character[] | undefined;
 
   // Form fields
-  public nameOfCharacter = '';
   public page = 1;
 
   private readonly ngUnsubscribe = new Subject<void>();
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.dataService
-      .getAllCharacters(this.page, this.nameOfCharacter)
+      .getAllCharacters(this.page)
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((res) => {
         this.info = res.info;
@@ -44,14 +43,6 @@ export class HomeComponent implements OnInit, OnDestroy {
    * @see https://rickandmortyapi.com/api/character/?name={name-of-the-character}
    */
   public searchCharacter() {
-    this.page = 1;
-    this.dataService
-      .getAllCharacters(this.page, this.nameOfCharacter)
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((res) => {
-        this.info = res.info;
-        this.results = res.results;
-      });
   }
 
   /**
@@ -61,14 +52,5 @@ export class HomeComponent implements OnInit, OnDestroy {
    * @see https://rickandmortyapi.com/api/character/?page={page-number}
    */
   public loadMore() {
-    this.page++;
-    this.dataService
-      .getAllCharacters(this.page, this.nameOfCharacter)
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe((res) => {
-        this.info = res.info;
-        if (this.results && res.results)
-          this.results = this.results.concat(res.results);
-      });
   }
 }

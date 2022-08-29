@@ -12,21 +12,5 @@ export class CharacterDetailComponent {
 
   character: Character = {};
 
-  constructor(private route: ActivatedRoute, private readonly dataService: DataService) {}
-
-  ngOnInit(): void {
-    this.getCharacterById(this.route.snapshot.paramMap.get('id'));
-  }
-
-  getCharacterById(id: any) {
-    console.log(id);
-    this.dataService.getCharacterById(id).subscribe(character => {
-      console.log(character);
-      this.character = character;
-    });
-  }
-
-  goBack() {
-    history.back()
-  }
+  constructor() {}
 }

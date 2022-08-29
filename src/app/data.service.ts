@@ -13,11 +13,10 @@ export class DataService {
   constructor(private readonly http: HttpClient) {}
 
   public getAllCharacters(
-    page: number,
-    searchTerm: string
+    page: number
   ): Observable<ApiResponse<Character[]>> {
     return this.http.get(
-      this.apiUrl + `character/?page=${page}&name=${searchTerm}`
+      this.apiUrl + `character/?page=${page}`
     );
   }
 
