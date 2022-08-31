@@ -12,7 +12,7 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit, OnDestroy {
   // API returned values
   public info: Info | undefined;
-  public results: Character[] | undefined;
+  public characters: Character[] | undefined;
 
   // Form fields
   public page = 1;
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe((res) => {
         this.info = res.info;
-        this.results = res.results;
+        this.characters = res.results;
       });
   }
 
